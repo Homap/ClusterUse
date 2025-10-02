@@ -61,11 +61,11 @@ Let's say you've run a job with such settings:
 
 - Job ID: 12797991
 
-Cluster: dardel
-User/Group: homapy/homapy
-State: COMPLETED (exit code 0)
-Nodes: 1
-Cores per node: 12
+Cluster: dardel <br>
+User/Group: homapy/homapy <br>
+State: COMPLETED (exit code 0) <br>
+Nodes: 1 <br>
+Cores per node: 12 <br>
 CPU Utilized: 00:00:18 -> This is the actual CPU time consumed by all cores combined.
 
     It measures how much "work" was done across all your cores. 
@@ -80,10 +80,9 @@ CPU Efficiency: 12.50% of 00:02:24 core-walltime -> core-walltime = wall-clock t
     CPU Utilized = 18 sec
     Core-walltime = 144 sec
     18 ÷ 144 = 0.125 = 12.5%
+    So only 12.5% of the CPU capacity you reserved was actually used.
 
-So only 12.5% of the CPU capacity you reserved was actually used.
-
-Job Wall-clock time: 00:00:12 -> This is the real elapsed time between job start and end.
-Memory Utilized: 14.43 MB
+Job Wall-clock time: 00:00:12 -> This is the real elapsed time between job start and end. <br>
+Memory Utilized: 14.43 MB <br>
 Memory Efficiency: 0.14% of 10.00 GB (10.00 GB/node)
 
