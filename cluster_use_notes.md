@@ -19,7 +19,6 @@ You could also create an alias for your project directories to make you remember
 I cannot imagine a terminal without colors, you can get that by adding the following lines to your `~/.bash_profile`
 
 `alias ls="ls --color=auto"`
-
 `export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "`
 
 This changes your shell prompt (PS1). <br>
