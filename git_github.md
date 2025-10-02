@@ -31,20 +31,23 @@ When prompted
 
 `Enter file in which to save the key (/home/homap/.ssh/id_ed25519): /home/homap/.ssh/id_ed25519_multi_express`
 Change the name. Here I changed from ed25519 to id_ed25519_multi_express to have a project specific deploy key. You can just enter if you don't want a passphrase, otherwise, add one.
-Start ssh agent in the background and add the key to it.
 
-# Add the deploy key to the repository
-# Copy the content of file ~/.ssh/id_ed25519_multi_express.pub and paste as deploy key for the repository on github.
-# To do that, go to the github repository, under Settings, Deploy keys, paste the content and check "Allow write access".
-# Now the key is added to your github. Activate the ssh-agent in your local repository in Terminal:
+8. Start ssh agent in the background and add the key to it.
 
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519_multi_express
+9. Add the deploy key to the repository
 
-git branch -M main
-git push -u origin main
+10. Copy the content of file ~/.ssh/id_ed25519_multi_express.pub and paste as deploy key for the repository on github.
+- To do that, go to the github repository, under Settings, Deploy keys, paste the content and check "Allow write access".
 
-# Things to remember
-# When you want to show an image in github, don't forget to also push the image to the repository otherwise it WON't SHOW IT!
+11. Now the key is added to your github. Activate the ssh-agent in your local repository in Terminal:
+
+`eval "$(ssh-agent -s)"`
+
+`ssh-add ~/.ssh/id_ed25519_multi_express`
+
+`git branch -M main`
+`git push -u origin main`
+
+- Things to remember: When you want to show an image in github, don't forget to also push the image to the repository otherwise it WON't SHOW IT!
+
 Source: # https://docs.github.com/en/get-started/importing-your-projects-to-github/importing-source-code-to-github/adding-locally-hosted-code-to-github
-8816298Golabi?
