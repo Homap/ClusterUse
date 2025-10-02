@@ -1,10 +1,11 @@
-# For github
+# Connect local project to github
 
-# You have a directory on your local or remote computer
-# Create a repository on github without README
-# In your local repository, initialise git
-git init
-# If you want to add the whole repository to git
+1. You have a directory on your local or remote computer
+2. Create a repository on github without README
+3. In your local repository, initialise git
+`git init`
+
+If you want to add the whole repository to git
 git add . && git commit -m "adding repo X to git"
 # If you want to add only a specific directory such as your codes, do:
 git add code && git commit -m "code for this study"
