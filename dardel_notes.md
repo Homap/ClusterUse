@@ -17,11 +17,12 @@ might end up receiving the cores on different nodes and the memory would be
 distributed, and yet again the job might run into OOM/out of memory issues,
 although you request enough cores/memory. 
 
-#SBATCH -p shared
+```#SBATCH -p shared
 #SBATCH --nodes=1            # keep everything on one node
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4    # 4 threads for your program
 #SBATCH --mem=10G            # request 10 GB memory
+```
 
 Furthermore, the total cores the job avails is determined by the combination of
 number of tasks (ntasks) and cpus per task (cpus-per-task). Choosing a
