@@ -21,7 +21,7 @@ although you request enough cores/memory.
 #SBATCH --nodes=1            # keep everything on one node
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4    # 4 threads for your program
-#SBATCH --mem=10G            # request 10 GB memory
+#SBATCH --mem=10G            # request 10 GB memory 
 ```
 
 Furthermore, the total cores the job avails is determined by the combination of
@@ -52,41 +52,30 @@ open a shell session and ssh to the compute node (after logging in to the login
 node), and use top or htop (you need to load the htop module to use this) to
 check the usage.
 
-<per> ```
-#SBATCH -N 1
+Let's say you've run a job with such settings:
+
+```#SBATCH -N 1
 #SBATCH -p shared -n 2 
 #SBATCH --mem 10G
-``` <pre>
+```
 
 - Job ID: 12797991
 
- **Cluster: dardel**
+Cluster: dardel
+User/Group: homapy/homapy
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 12
+CPU Utilized: 00:00:18 -> This is the actual CPU time consumed by all cores combined.
 
- User/Group: homapy/homapy
-
- State: COMPLETED (exit code 0)
-
- Nodes: 1
-
- Cores per node: 12
-
- CPU Utilized: 00:00:18
-
- This is the actual CPU time consumed by all cores combined.
-
-    It measures how much "work" was done across all your cores.
-
+    It measures how much "work" was done across all your cores. 
     Examples:
-
     If 1 core worked hard for 18 seconds while the others did nothing → total = 18 sec.
-
     If 6 cores worked for 3 seconds each → total also = 18 sec.
-
     If all 12 cores worked fully for 12 seconds → total = 144 sec.
+    So in your job, only 18 core-seconds of actual computation happened.
 
-So in your job, only 18 core-seconds of actual computation happened.
-
- CPU Efficiency: 12.50% of 00:02:24 core-walltime -> core-walltime = wall-clock time × number of cores allocated -> 12 sec × 12 cores = 144 sec = 00:02:24
+CPU Efficiency: 12.50% of 00:02:24 core-walltime -> core-walltime = wall-clock time × number of cores allocated -> 12 sec × 12 cores = 144 sec = 00:02:24
 
     CPU Utilized = 18 sec
     Core-walltime = 144 sec
@@ -94,9 +83,7 @@ So in your job, only 18 core-seconds of actual computation happened.
 
 So only 12.5% of the CPU capacity you reserved was actually used.
 
- Job Wall-clock time: 00:00:12 -> This is the real elapsed time between job start and end.
-
- Memory Utilized: 14.43 MB
-
- Memory Efficiency: 0.14% of 10.00 GB (10.00 GB/node)
+Job Wall-clock time: 00:00:12 -> This is the real elapsed time between job start and end.
+Memory Utilized: 14.43 MB
+Memory Efficiency: 0.14% of 10.00 GB (10.00 GB/node)
 
