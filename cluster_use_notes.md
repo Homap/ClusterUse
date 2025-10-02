@@ -33,7 +33,8 @@ The `\[\033[…m\]` parts are ANSI color codes: <br>
 - m = reset
 
 You need to refresh `~/.bashrc` and `~/.bash_profile` after adding these lines by: <br>
-`source ~/.bashrc` <br>
+`source ~/.bashrc`
+
 `source ~/.bash_profile`
 
 I also want to write codes in VsCode open in my computer but save it to the cluster. This is easy in Linux computers but in MacOS, we need to mount the server to the Finder. An amazing tool for this is MountainDuck (Price per user 49$).
