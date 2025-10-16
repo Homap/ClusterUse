@@ -1,6 +1,6 @@
 # Tips for transferring large folders across directories or between Dardel and your local computer
 
-**Transfer large files (>10 GB) using Dardel transfer node:** To avoid causing problems for other users we should be using the transfer node on Dardel whenever we transfer large folders (e.g. creating back-ups) from or to Dardel. To log into the Dardel transfer node use (change the 'user' to your username): 
+**Transfer large files using Dardel transfer node:** To avoid causing problems for other users we should be using the transfer node on Dardel whenever we transfer large folders (e.g. creating back-ups) from or to Dardel. To log into the Dardel transfer node use (change the 'user' to your username): 
 
 `ssh user@dardel-ftn01.pdc.kth.se`
 
