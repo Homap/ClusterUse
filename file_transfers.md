@@ -4,10 +4,12 @@
 
 `ssh user@dardel-ftn01.pdc.kth.se`
 
+When transferring files this way, the file transfer does not need to be submitted as a job. If you transfer files on one of the 'normal' nodes, then this should be submitted as a job to slurm.
+
 ## rsync 
 rsync is a good option for transferring files and folders both between your local computer and Dardel as well as around Dardel. For transfering a small number of files it may be ok to do this on the login node but if you are transferring many files, then this should be submitted as a job using SBATCH. 
 
-When transsferring files from elsewhere to a project directory we are equested not use the `-a` flag. The `-a` flag preserves file ownership and permissions, which results in the storage space used by those files counting against your personal quota, not the project's. 
+When transsferring files from elsewhere to a project directory we are equested not use the `-a` flag (https://support.pdc.kth.se/doc/data_management/file_transfer/). The `-a` flag preserves file ownership and permissions, which results in the storage space used by those files counting against your personal quota, not the project's. Instead use `rsync -r`.
 
 #### Hard links
 When transferring folders that contain many hard links (such can be created when running e.g. snakemake, nextflow or conda) the default behaviour of rsync is to not not preserve the hard links but rather to create duplicate files. This can be problematic as it can increase the copied folder size and disrupt the integrity of the file paths data integrity, versioning, or incremental backups. However, preserving hard links is more resource intensive as rsync then has to track all the connections so more I/O operations. So it's a judgment call. The flag to tell rsync to preserve hard links is `-H`. 
