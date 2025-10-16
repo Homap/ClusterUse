@@ -1,6 +1,8 @@
 # Tips for transferring large folders across directories or between Dardel and your local computer
 
-**Transfer large files using Dardel transfer node:** To avoid causing problems for other users we should be using the transfer node on Dardel whenever we transfer large folders (e.g. creating back-ups) from or to Dardel. The transfer node address is dardel-ftn01.pdc.kth.se.
+**Transfer large files using Dardel transfer node:** To avoid causing problems for other users we should be using the transfer node on Dardel whenever we transfer large folders (e.g. creating back-ups) from or to Dardel. To log into the Dardel transfer node use (change the 'user' to your username): 
+
+`ssh user@dardel-ftn01.pdc.kth.se`
 
 ## rsync 
 rsync is a good option for transferring files and folders both between your local computer and Dardel as well as around Dardel. For transfering a small number of files it may be ok to do this on the login node but if you are transferring many files, then this should be submitted as a job using SBATCH. 
