@@ -4,12 +4,12 @@
 
 `ssh user@dardel-ftn01.pdc.kth.se`
 
-When transferring files this way, the file transfer does not need to be submitted as a job. If you transfer files on one of the 'normal' nodes, then this should be submitted as a job to slurm.
+Note that you will need to add the transfer node info to your ssh config file. When transferring files this way, the file transfer does not need to be submitted as a job. If you transfer files on one of the 'normal' nodes, then this should be submitted as a job to slurm.
 
 ## rsync 
-rsync is a good option for transferring files and folders both between your local computer and Dardel as well as around Dardel. For transfering a small number of files it may be ok to do this on the login node but if you are transferring many files, then this should be submitted as a job using SBATCH (or on transfer node if you are transfering very large files from your computer to Dardel - see above). 
+rsync is a good option for transferring files and folders both between your local computer and Dardel as well as around Dardel. For transfering a small number of files it may be ok to do this on the login node but if you are transferring many files, then this should be submitted as a job to slurm (or on transfer node if you are transfering very large files from your computer to Dardel - see above). 
 
-When transsferring files from elsewhere to a project directory we are equested not use the `-a` flag (https://support.pdc.kth.se/doc/data_management/file_transfer/). The `-a` flag preserves file ownership and permissions, which results in the storage space used by those files counting against your personal quota, not the project's. Instead use `rsync -r`. Note that you then need to maually set any other flags that are warpped up in ´-a´ yourself. The ´-a´flag includes:
+When transferring files from elsewhere to a project directory we are requested **not** to use the `-a` flag (https://support.pdc.kth.se/doc/data_management/file_transfer/). The `-a` flag preserves file ownership and permissions, which results in the storage space used by those files counting against your personal quota, not the project's. Instead use `rsync -r`. Note that you then need to maually set any other flags that are warpped up in ´-a´ yourself. The ´-a´flag includes:
 - r → recursive (copy directories and their contents)
 - l → copy symlinks as symlinks
 - p → preserve permissions
